@@ -1,10 +1,10 @@
 ﻿;All of the good addons have comments here.
 
 ## Title: Wealth Evaluator
-## APIVersion: 101032
+## APIVersion: 101046 101047
 ## Author: |c7f0000Rhyono|r
 ## Description: Sums a character's wealth. /wehelp for help.
-## Version: 1.50
+## Version: 1.51
 ## DependsOn: LibAddonMenu-2.0
 ## OptionalDependsOn: MasterMerchant LibPrice
 ## SavedVariables: WealthEvaluatorVars
