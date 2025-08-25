@@ -1,8 +1,9 @@
 WealthEval = {
 Name = "WealthEvaluator",
-Author = "Rhyono",
+Author =  "Rhyono",
 Version = "1.51",
-SettingsVersion = "1.10"}
+SettingsVersion = "1.10"
+}
 
 local WE = WealthEval
 
@@ -14,16 +15,16 @@ WE.guilds = {[1]={"?",0},[2]={"?",0},[3]={"?",0},[4]={"?",0},[5]={"?",0}}
 WE.Defaults = {
 ['homes']={},['autofurnituresum']=true,['stolenwarning']=true,['unknownwarning']=true,['apval']=0,['crownsval']=0,['telvarval']=0,['voucherval']=0,['includemode']="All",['includeguilds']=true,['includeworn']=true,['includebag']=true,['includebank']=true,['includehousebank']=true,['includecraftbag']=true,['includebaggold']=true,['includebankgold']=true,['includecrowns']=false,['includetelvar']=false,['includebanktelvar']=false,['includeap']=false,['includevoucher']=false,['includemotifknowledge']=false,['includecookknowledge']=false,['includefurnknowledge']=false,['includehousecost']=false,['includefurnval']=false,['includebankspace']=false}
 
-WE.styles = -- visual id, achievement id, first motif id, type
-[ 1] = {1,1025,16424}, -- High Elf
-[ 2] = {1,1025,27245}, -- Dark Elf
-[ 3] = {1,1025,16428}, -- Wood Elf
-[ 4] = {1,1025,27244}, -- Nord
-[ 5] = {1,1025,16425}, -- Breton
-[ 6] = {1,1025,16427}, -- Redguard
-[ 7] = {1,1025,44698}, -- Khajiit
-[ 8] = {1,1025,16426}, -- Orc
-[ 9] = {1,1025,27246}, -- Argonian
+WE.styles = { -- visual id, achievement id, motif book id (or axes motif minus 1), type
+[1] = {1,1025,16424}, -- High Elf
+[2] = {1,1025,27245}, -- Dark Elf
+[3] = {1,1025,16428}, -- Wood Elf
+[4] = {1,1025,27244}, -- Nord
+[5] = {1,1025,16425}, -- Breton
+[6] = {1,1025,16427}, -- Redguard
+[7] = {1,1025,44698}, -- Khajiit
+[8] = {1,1025,16426}, -- Orc
+[9] = {1,1025,27246}, -- Argonian
 [10] = {1,1025,54868}, -- Imperial
 [11] = {2,1025,51638}, -- Ancient Elf
 [12] = {2,1025,51565}, -- Barbaric
@@ -142,7 +143,12 @@ WE.styles = -- visual id, achievement id, first motif id, type
 [126] = {2,3923,203361}, -- Shardborn
 [127] = {2,3924,203473}, -- West Weald Legion
 [128] = {2,3925,203492}, -- Lucent Sentinel
-[129] = {2,3926,203834}, -- Hircine Bloodhunter
+[129] = {3,3926,203834}, -- Hircine Bloodhunter
+[130] = {2,4159,211054}, -- Exile's Revenge
+[131] = {2,4160,211071}, -- Militant Monk
+-- [132] = {2,0,212084}, -- Stirk Fellowship
+-- [133] = {2,4241,212118}, -- Coldharbour Dominator
+[134] = {2,4242,212118}, -- Tide-Born
 }	
  
 WE.foodrecipes = { 
@@ -160,7 +166,10 @@ WE.furnrecipes = {
 203319,203320,203321,203322,203323,203324,203325,203326,203327,203328,203329,203330,203331,203332,203333,203334,203335,203336,203337,203338,203339,203340,203341,203342,203343,203344,203345,203346,203347,203348,203349,203350,203351,203352,203353, -- Scions
 207820,207821,207822,207823,207824,207825,207826,207827,207828,207829,207830,207831,207832,207833,207834,207835,207836,207837,207838,207839,207840,207841,207842,207843,207844,207845,207846,207847,207848,207849,207850,207851,207852,207853,207854,207855,207856,207857,207858,207859,207860,207861,207862,207863,207864,207865,207866,207867,207868,207869,207870,207871,207872,207873,207874,207875,207876,207877,207878,207879,207880,207881,207882,207883,207884,207885,207886,207887,207888,207889,207890,207891,207892,207893,207894,207895,207896,207897,207898,207899,207900,207901,207902,207903,207904,207905,207906,207907,207908,207909,207910,207911,207912,207913,207914,207915,207916,207917,207918,207919,207920,207921,207922,207923,207924,207925,207926,207927, -- Gold Road
 211039,211038,211037,211036,211035,211034,211033,211032,211031,211030,211029,211028,211027,211026,211025,211024,211023,211022,211021,211020,211019,211018,211017,211016,211015,211014,211013,211012,211011,211010,211009,211008,211007,211006,211005, -- U43 coz idk what it's called
-211404,211405,211406,211407,211408,211409,211410,211411,211412,211413,211414,211415,211416,211417,211418,211419,211420,211421,211422,211423,211424,211425,211426,211427,211428,211429,211430,211431,211432,211433,211434,211435,211436,211437,211438,211439,211440,211441,211442,211443,211444,211445,211446,211447,211448,211449,211450,211451,211452,211453,211454,211455,211456,211457,211458,212379, -- U44
+211404,211405,211406,211407,211408,211409,211410,211411,211412,211413,211414,211415,211416,211417,211418,211419,211420,211421,211422,211423,211424,211425,211426,211427,211428,211429,211430,211431,211432,211433,211434,211435,211436,211437,211438,211439,211440,211441,211442,211443,211444,211445,211446,211447,211448,211449,211450,211451,211452,211453,211454,211455,211456,211457,211458,211459,212379, -- U44
+212206,212207,212208,212209,212210,212561,212562,212563,212564,212565,212566,212567,212589,212590,212591,212592,212593,212594,212595,212596,212597,212598,212599,212600,212601,212602,212603,212604,212605,212606,212607,212608,212609,212610,212611,212612,212617,  -- Fallen Banners
+217504,217505,217506,217507,217508,217509,217510,217511,217512,217513,217514,217515,217516,217517,217518,217519,217520,217521,217522,217523,217524,217525,217526,217527,217528,217529,217530,217531,217532,217533,217534,217535,217536,217537,217538,217539,217540,217541,217542,217543,217544,217545,217546,217547,217548,217549,217550,217551,217552,217553,217554,217555,217556,217557,217558,217559,217560,217561,217562,217563,217564,217565,217566,217567,217568,217569,217570,217571,217573,217574,217575,217576,217577,217578,217579,217580,217581, -- Seasons of the Worm Cult
+219660,219661,219663,219664,219665,219666,219667,219668,219669,219670,219671,219672,219673,219674,219675,219676,219677,219678,219679,219680,219681,219682,219683,219684,219685,219686,219687,219688,219689,219690,219691,219692,219693,219694,219695,219696,219697,219698,219699,219704,219766,219767,219769,219770,219771,219772,219773,219774,219775,219776,219777,219768, -- Feast of Shadows
 }
 
 -- [itemID] = gold, AP, writ vouchers, tel var; will be implemented once I have usable data
@@ -206,17 +215,17 @@ WE.houses = { --name, cost, furniture value, owned GetCurrentZoneHouseId()
 [37] = {"Serenity Falls Estate",3775000,0,0},
 [38] = {"Daggerfall Overlook",3780000,0,0},
 [39] = {"Ebonheart Chateau",3785000,0,0},
-[40] = {"Grand Topal Hideaway",0,0,0}, --crown store
-[41] = {"Earthtear Cavern",0,0,0}, --crown store
-[42] = {"Saint Delyn Penthouse",0,0,0}, --assuming you got it free
+[40] = {"Grand Topal Hideaway",0,0,0}, -- crown store
+[41] = {"Earthtear Cavern",0,0,0}, -- crown store
+[42] = {"Saint Delyn Penthouse",0,0,0}, -- assuming you got it free
 [43] = {"Amaya Lake Lodge",1300000,0,0},
 [44] = {"Ald Velothi Harbor House",322000,0,0},
-[45] = {"Tel Galen Tower",0,0,0}, --crown store
-[46] = {"Linchal Grand Manor",0,0,0}, --crown store
+[45] = {"Tel Galen Tower",0,0,0}, -- crown store
+[46] = {"Linchal Grand Manor",0,0,0}, -- crown store
 [47] = {"Coldharbour Surreal Estate",1000000,0,0},
 [48] = {"Hakkvild's High Hall",3800000,0,0},
 [49] = {"Exorcised Coven Cottage",250000,0,0},
-[54] = {"Pariah's Pinnacle",0,0,0}, --crown store
+[54] = {"Pariah's Pinnacle",0,0,0}, -- crown store
 [55] = {"The Orbservatory Prior",0,0,0}, -- crown store
 [56] = {"The Erstwhile Sanctuary",0,0,0}, -- crown store
 [57] = {"Princely Dawnlight Palace",0,0,0}, -- crown store
@@ -231,12 +240,12 @@ WE.houses = { --name, cost, furniture value, owned GetCurrentZoneHouseId()
 [66] = {"Elinhir Private Arena",0,0,0}, -- crown store
 [68] = {"Sugar Bowl Suite",0,0,0}, -- assuming you got it free
 [69] = {"Jode's Embrace",0,0,0}, -- crown store
-[70] = {"Hall of the Lunar Champion",0,0,0}, -- price unknown
+[70] = {"Hall of the Lunar Champion",0,0,0}, -- unlocked through questing
 [71] = {"Moon-Sugar Meadow",0,0,0}, -- crown store
 [72] = {"Wraithhome",0,0,0}, -- price unknown
 [73] = {"Lucky Cat Landing",0,0,0}, -- price unknown
 [74] = {"Potentate's Retreat",0,0,0}, -- crown store
-[75] = {"Foregmaster Falls",0,0,0}, -- crown store
+[75] = {"Forgemaster Falls",0,0,0}, -- crown store
 [76] = {"Thieves' Oasis",0,0,0}, -- crown store
 [77] = {"Snowmelt Suite",0,0,0}, -- assuming you got it free
 [78] = {"Proudspire Manor",1050000,0,0}, -- gold price after achievement
@@ -247,32 +256,41 @@ WE.houses = { --name, cost, furniture value, owned GetCurrentZoneHouseId()
 [83] = {"Stone Eagle Aerie",0,0,0}, -- price unknown
 [85] = {"Kushalit Sanctuary",0,0,0}, -- price unknown
 [86] = {"Varlaisvea Ayleid Ruins",0,0,0}, -- price unknown
+[87] = {"Pilgrim's Rest",0,0,0}, -- assuming you got it free
 [88] = {"Water's Edge",1055000,0,0}, -- gold price after achievement
 [89] = {"Pantherfang Chapel",0,0,0}, -- price unknown
-[90] = {"Doomchar Plateau",0,0,0}, --free with tickets
+[90] = {"Doomchar Plateau",0,0,0}, -- free with tickets
 [91] = {"Sweetwater Cascades",0,0,0}, -- price unknown
 [92] = {"Ossa Accentium",0,0,0}, -- crown store
 [93] = {"Agony's Ascent",0,0,0}, -- crown store
 [94] = {"Seaveil Spire",0,0,0}, -- crown store
-[95] = {"Pilgrim's Rest",0,0,0}, -- assuming you got it free
-[96] = {"Highhallow Hold",0,0,0}, --crown store
-[97] = {"The Fair Winds",0,0,0}, -- crown store
-[98] = {"Journey's End Lodgings",0,0,0}, -- assuming you got it free
-[99] = {"Emissary's Enclave",0,0,0}, -- price unknown
-[100] = {"Kelesan'ruhn",0,0,0}, -- free with event
-[101] = {"Fogbreak Lighthouse",0,0,0}, -- crown store
+[95] = {"Ancient Anchor Berth",0,0,0}, -- assuming you got it free
+[96] = {"Highhallow Hold",0,0,0}, -- crown store
+[98] = {"Fogbreak Lighthouse",0,0,0}, -- crown store
+[99] = {"The Fair Winds",0,0,0}, -- crown store
+[100] = {"Journey's End Lodgings",0,0,0}, -- assuming you got it free
+[101] = {"Emissary's Enclave",0,0,0}, -- price unknown
 [102] = {"Shadow Queen's Labyrinth",0,0,0}, -- crown store
-[103] = {"Tower of Unutterable Truths",0,0,0}, -- crown store
-[104] = {"Gladesong Arboretum",0,0,0}, -- crown store
-[105] = {"Willowpond Haven",0,0,0}, -- crown store
-[106] = {"Sword-Singer's Redoubt",0,0,0}, -- assuming you got it free
-[107] = {"Merryvine Retreat",1300000,0,0,},  -- gold price after achievement
+[103] = {"Sword-Singer's Redoubt",0,0,0}, -- assuming you got it free
+[104] = {"Kelesan'ruhn",0,0,0}, -- free with event
+[105] = {"Gladesong Arboretum",0,0,0}, -- crown store
+[106] = {"Tower of Unutterable Truths",0,0,0}, -- crown store
+[107] = {"Willowpond Haven",0,0,0}, -- crown store
 [108] = {"Zhan Khaj Crest",0,0,0,},  -- crown store
 [109] = {"Rosewine Retreat",0,0,0}, -- assuming you got it free
-[110] = {"Seabloom Villa",0,0,0},   -- eso or steam site
-[111] = {"Haven of the Five Companions",0,0,0}, --free with tickets
-[112] = {"Grand Gallery of Tamriel",0,0,0},   -- crown store
+[110] = {"Merryvine Estate",1300000,0,0,},  -- gold price after achievement
+[111] = {"Seabloom Villa",0,0,0},   -- eso or steam site
+[112] = {"Haven of the Five Companions",0,0,0}, -- free with tickets
 [113] = {"Kthendral Deep Mines",0,0,0},   -- crown store
+[114] = {"Grand Gallery of Tamriel",0,0,0},   -- crown store
+[115] = {"Shattered Mirror Isle",0,0,0}, -- possibly crown store
+[116] = {"Castle Skingrad",0,0,0}, -- crown store
+[117] = {"Bismuth Steam Baths",1200000,0,0,},  -- gold price after achievement
+[118] = {"The Sleepy Sloth",0,0,0}, -- assuming you got it free
+[119] = {"Theater of the Ancestors",0,0,0}, -- crown store
+[120] = {"Hiddenspring Cottage",0,0,0}, -- crown store
+[121] = {"Wildgrown Chapel of Julianos",0,0,0}, -- free with tickets
+
 }
 
 WE.bankspace = {
