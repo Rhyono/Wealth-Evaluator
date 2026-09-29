@@ -1,6 +1,6 @@
 WealthEval = {
 Name = "WealthEvaluator",
-Author =  "Rhyono",
+Author = "Rhyono",
 Version = "1.53",
 SettingsVersion = "1.11"
 }
@@ -305,7 +305,7 @@ WE.houses = { --name, cost, furniture value, owned GetCurrentZoneHouseId()
 [128] = {"Rogue's Refuge",0,0,0}, -- assuming you got it free
 [129] = {"Dancing Waters Wellspring",0,0,0}, -- crown store
 [130] = {"Star-Gazer's Vigil",0,0,0}, -- crown store
-[131] = {"Grotto of Desires",0,0,0}, -- crown store
+[131] = {"Grotto of Desires",0,0,0}, -- assuming you got it free
 [132] = {"Sheogorad Chateau",0,0,0}, -- crown store
 }
 
